@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý đăng ký hồ sơ khám bệnh</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7fb;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #1976d2;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 25px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        .submit {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        .reset {
+            background-color: #777;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>HỆ THỐNG QUẢN LÝ HỒ SƠ KHÁM BỆNH</h1>
+        <p>Đăng ký và quản lý thông tin bệnh nhân</p>
+    </div>
+
+    <div class="container">
+
+        <h2>1. Đăng ký hồ sơ bệnh nhân</h2>
+
+        <form>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Họ và tên:</label>
+                    <input type="text" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày sinh:</label>
+                    <input type="date">
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Giới tính:</label>
+                    <select>
+                        <option>-- Chọn giới tính --</option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                        <option>Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Số CCCD:</label>
+                    <input type="text" placeholder="Nhập số CCCD">
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Số điện thoại:</label>
+                    <input type="tel" placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Nhập email">
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Địa chỉ:</label>
+                    <input type="text" placeholder="Nhập địa chỉ">
+                </div>
+
+            </div>
+
+
+            <h2>2. Thông tin khám bệnh</h2>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Khoa khám:</label>
+
+                    <select>
+                        <option>-- Chọn khoa --</option>
+                        <option>Khoa Nội</option>
+                        <option>Khoa Ngoại</option>
+                        <option>Khoa Nhi</option>
+                        <option>Khoa Tim mạch</option>
+                        <option>Khoa Da liễu</option>
+                        <option>Khoa Tai Mũi Họng</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Ngày khám:</label>
+                    <input type="date">
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Triệu chứng:</label>
+
+                    <textarea
+                        placeholder="Nhập triệu chứng của bệnh nhân">
+                    </textarea>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Tiền sử bệnh:</label>
+
+                    <textarea
+                        placeholder="Nhập tiền sử bệnh nếu có">
+                    </textarea>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Hình thức khám:</label>
+
+                    <input type="radio" name="hinhthuc">
+                    Khám thường
+
+                    <input type="radio" name="hinhthuc">
+                    Khám dịch vụ
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <button type="submit" class="submit">
+                    Đăng ký hồ sơ
+                </button>
+
+                <button type="reset" class="reset">
+                    Làm lại
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <h2>3. Danh sách hồ sơ bệnh nhân</h2>
+
+        <table>
+
+            <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Số điện thoại</th>
+                <th>Khoa khám</th>
+                <th>Ngày khám</th>
+                <th>Trạng thái</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Nguyễn Văn An</td>
+                <td>15/05/2000</td>
+                <td>Nam</td>
+                <td>0901234567</td>
+                <td>Khoa Nội</td>
+                <td>12/09/2026</td>
+                <td>Đã đăng ký</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Trần Thị Bình</td>
+                <td>20/08/2002</td>
+                <td>Nữ</td>
+                <td>0912345678</td>
+                <td>Khoa Da liễu</td>
+                <td>13/09/2026</td>
+                <td>Chờ khám</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <div class="footer">
+        © 2026 - Hệ thống quản lý hồ sơ khám bệnh
+    </div>
+
+</body>
+</html>
